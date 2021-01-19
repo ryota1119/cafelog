@@ -7,17 +7,24 @@
         = f.label :name, '店名', class: "new-content-title"
         = f.text_field :name, class: "new-content-form"
       .new-content
-        = f.fields_for :address do |address_form|
-          = address_form.label :postal_code, '郵便番号', class: "new-content-title"
-          = address_form.text_field :postal_code
-          = address_form.label :prefecture, '都道府県', class: "new-content-title"
-          = address_form.text_field :prefecture
-          = address_form.label :city, '市町村', class: "new-content-title"
-          = address_form.text_field :city
-          = address_form.label :house_number, '番地', class: "new-content-title"
-          = address_form.text_field :house_number
-          = address_form.label :building_name, '建物名', class: "new-content-title"
-          = address_form.text_field :building_name
-          = address_form.label :phone_number, '電話番号', class: "new-content-title"
-          = address_form.text_field :phone_number
+        = f.label :postal_code, '郵便番号', class: "new-content-title"
+        = f.text_field :postal_code
+      .new-content
+        = f.label :prefecture, '都道府県', class: "new-content-title"
+        = f.text_field :prefecture
+      .new-content
+        = f.label :city, '市町村', class: "new-content-title"
+        = f.text_field :city
+      .new-content
+        = f.label :house_number, '番地', class: "new-content-title"
+        = f.text_field :house_number
+      .new-content
+        = f.label :building_name, '建物名', class: "new-content-title"
+        = f.text_field :building_name
+      .new-content
+        = f.label :phone_number, '電話番号', class: "new-content-title"
+        = f.text_field :phone_number
+      .new-content
         = f.submit "お店を公開する", class: "btn"
+
+= render 'footer'
