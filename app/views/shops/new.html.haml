@@ -1,30 +1,39 @@
 = render 'header'
 
-.new-content
+.form
   =form_with(model: @shop, local: true) do |f|
-    .form-container
+    .form__container
+      .form__container__title
+        お店を登録
       .new-content
-        = f.label :name, '店名', class: "new-content-title"
-        = f.text_field :name, class: "new-content-form"
+        = f.label :name, '店名', class: "new-content__title"
+        %br/
+        = f.text_field :name, class: "new-content__form"
       .new-content
-        = f.label :postal_code, '郵便番号', class: "new-content-title"
-        = f.text_field :postal_code
+        = f.label :postal_code, '郵便番号', class: "new-content__title"
+        %br/
+        = f.text_field :postal_code, class: "new-content__form"
       .new-content
-        = f.label :prefecture, '都道府県', class: "new-content-title"
-        = f.text_field :prefecture
+        = f.label :prefecture, '都道府県', class: "new-content__title"
+        %br/
+        = f.text_field :prefecture, class: "new-content__form"
       .new-content
-        = f.label :city, '市町村', class: "new-content-title"
-        = f.text_field :city
+        = f.label :city, '市町村', class: "new-content__title"
+        %br/
+        = f.text_field :city, class: "new-content__form"
       .new-content
-        = f.label :house_number, '番地', class: "new-content-title"
-        = f.text_field :house_number
+        = f.label :house_number, '番地', class: "new-content__title"
+        %br/
+        = f.text_field :house_number, class: "new-content__form"
       .new-content
-        = f.label :building_name, '建物名', class: "new-content-title"
-        = f.text_field :building_name
+        = f.label :building_name, '建物名', class: "new-content__title"
+        %br/
+        = f.text_field :building_name, class: "new-content__form"
       .new-content
-        = f.label :phone_number, '電話番号', class: "new-content-title"
-        = f.text_field :phone_number
+        = f.label :phone_number, '電話番号', class: "new-content__title"
+        %br/
+        = f.text_field :phone_number, class: "new-content__form"
       .new-content
-        = f.submit "お店を公開する", class: "btn"
+        = f.submit "お店を公開する", class: "submit-btn"
 
 = render 'footer'

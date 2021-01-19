@@ -1,0 +1,31 @@
+.form {
+  &__container {
+    height: auto;
+    width: 350px;
+    margin: 50px auto 100px auto;
+    &__title {
+      font-size: 30px;
+      font-weight: bold;
+      font: bold;
+      text-align: center;
+    }
+    .new-content {
+      width: 100%;
+      margin-top: 15px;
+      &__title {
+      }
+      &__form {
+        height: 40px;
+        width: 100%;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      .submit-btn {
+        height: 40px;
+        width: 100%;
+        margin-top: 40px;
+      }
+    }
+  }
+}
