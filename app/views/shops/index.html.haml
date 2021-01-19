@@ -12,17 +12,34 @@
               = link_to "ログイン"
             %li 
               = link_to "新規登録"
-    .header__lower
-      %form.search-form(action="/")
-        %input#sbox(type="text")/
-        %input#sbtn(type="submit")/
-          
+    .header__search
+      %form.search_container{:action => "#", :method => "get"}
+        %input{:placeholder => "キーワード検索", :size => "25", :type => "text"}
+        %button{:type => "submit"}
+          %i.fas.fa-search
+
 .main
   .main__img
     .main__img__msg
+      .main__img__msg__ttl
+        カフェ選びならCafelog
+      .main__img__msg__txt
+        休憩・勉強・仕事・女子会
+        %br
+        使い方いろいろ
   .main__feature
+    用途ジャンルから探す
+    %br/
+    Tagsテーブルからタグ一覧を作成
   .main__shop-list
+    Shopsテーブルからショップリストを作成
   .app-banner
+    .app-banner__inner
+      .app-banner__inner__txt
+        今すぐカフェを探す
+      .app-banner__inner__btn
+        = link_to "新規登録", root_path, class: "btn login_btn"
+
 
 .footer
   .footer__inner

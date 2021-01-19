@@ -12,9 +12,11 @@
     display: flex;
     justify-content: space-between;
     &__title {
-      
       font-size: 50px;
       font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       a {
         color: darkgray;
         text-decoration: none;
@@ -36,44 +38,39 @@
       }
     }
   }
-  &__lower {
+  &__search {
     height: 60px;
     width: 100%;
-    background-color: bisque;
-    .search-form{
-      position:relative;
-      max-width:300px;	
-      margin-bottom:20px;
-      #sbox{
-        height:50px;
-        padding:0 10px; 
-        position:absolute; 
-        left:0;
-        top:0; 
-        border-radius:25px;
-        outline:0;
-        background:#eee;
-      }
-      #sbtn{
-        height:50px;
-      width:50px;	
-      position:absolute; 
-      left:250px; 
-      top:0;
-      background:#7fbfff;
-      color:#fff;
-      border:none;
-      border-radius:0 25px 25px 0;
-      }
-      #sbtn.fa-search{
-        font-size:20px;	
-        position:absolute;
-        top:30%;
-        left:30%;	
-      }
-      #sbtn:hover{
-        color:#888;
-      }
+    .search_container{
+      box-sizing: border-box;
+      position: relative;
+      border: 1px solid #999;
+      display: block;
+      padding: 3px 10px;
+      margin: 0 auto;
+      border-radius: 20px;
+      height: 40px;
+      width: 90%;
+      overflow: hidden;
+    }
+    .search_container input[type="text"]{
+      border: none;
+      height: 30px;
+    }
+    .search_container input[type="text"]:focus {
+      outline: 0;
+    }
+    .search_container button[type="submit"]{
+      cursor: pointer;
+      border: none;
+      background: #3879D9;
+      color: #fff;
+      position: absolute;
+      width: 50px;
+      height: 45px;
+      right:0px;
+      top: -3px;
+      outline : none;
     }
   }
 }
@@ -81,9 +78,25 @@
 .main {
   width: 100%;
   &__img {
-    background-color: brown;
+    background-image: url("/assets/images/2526814093.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     height: 560px;
-    width: 100%;
+    padding: 0 100px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    &__msg {
+      color: white;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      &__ttl {
+        font-size: 60px;
+      }
+      &__txt {
+        font-size: 20px;
+      }
+    }
   }
   &__feature {
     height: 500px;
@@ -98,7 +111,53 @@
   .app-banner {
     height: 400px;
     width: 100%;
-    background-color: darkgoldenrod;
+    background-image: url("/assets/images/ac96e11703b8fc1bd466f91bb87b3f6ed1524b09.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    &__inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      &__txt {
+        color: white;
+        font-size: 50px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      &__btn{
+        text-align: center;
+        .login_btn {
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 1.5;
+          position: relative;
+          display: inline-block;
+          padding: 1rem 4rem;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+          text-align: center;
+          vertical-align: middle;
+          text-decoration: none;
+          letter-spacing: 0.1em;
+          color: #212529;
+          border-radius: 0.5rem;
+          border-radius: 100vh;
+          color: #fff;
+          background-color: #FF9900;
+          font-weight: bold;
+        }
+        .login_btn:hover {
+          background-color: #f56500;
+        }
+      }
+    }
   }
 }
 
