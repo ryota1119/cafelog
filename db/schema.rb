@@ -10,29 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_19_075940) do
+ActiveRecord::Schema.define(version: 2021_01_19_085152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "addresses", force: :cascade do |t|
-    t.string "postal_code", null: false
-    t.string "prefecture", null: false
-    t.string "city", null: false
-    t.string "house_number", null: false
-    t.string "building_name", null: false
-    t.string "phone_number", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "shop_id"
-    t.index ["shop_id"], name: "index_addresses_on_shop_id"
-  end
 
   create_table "shops", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "postal_code", null: false
+    t.string "prefecture", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "building_name"
+    t.string "phone_number", null: false
   end
 
-  add_foreign_key "addresses", "shops"
 end

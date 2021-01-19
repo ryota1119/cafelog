@@ -1,17 +1,23 @@
-=form_with(model: @shop, local: true) do |f|
-  = f.label :name, '店名'
-  = f.text_field :name
-  = f.fields_for :address do |address_form|
-    = address_form.label :postal_code, '郵便番号'
-    = address_form.text_field :postal_code
-    = address_form.label :prefecture, '都道府県'
-    = address_form.text_field :prefecture
-    = address_form.label :city, '市町村'
-    = address_form.text_field :city
-    = address_form.label :house_number, '番地'
-    = address_form.text_field :house_number
-    = address_form.label :building_name, '建物名'
-    = address_form.text_field :building_name
-    = address_form.label :phone_number, '電話番号'
-    = address_form.text_field :phone_number
-  = f.submit "お店を公開する", class: "btn"
+= render 'header'
+
+.new-content
+  =form_with(model: @shop, local: true) do |f|
+    .form-container
+      .new-content
+        = f.label :name, '店名', class: "new-content-title"
+        = f.text_field :name, class: "new-content-form"
+      .new-content
+        = f.fields_for :address do |address_form|
+          = address_form.label :postal_code, '郵便番号', class: "new-content-title"
+          = address_form.text_field :postal_code
+          = address_form.label :prefecture, '都道府県', class: "new-content-title"
+          = address_form.text_field :prefecture
+          = address_form.label :city, '市町村', class: "new-content-title"
+          = address_form.text_field :city
+          = address_form.label :house_number, '番地', class: "new-content-title"
+          = address_form.text_field :house_number
+          = address_form.label :building_name, '建物名', class: "new-content-title"
+          = address_form.text_field :building_name
+          = address_form.label :phone_number, '電話番号', class: "new-content-title"
+          = address_form.text_field :phone_number
+        = f.submit "お店を公開する", class: "btn"

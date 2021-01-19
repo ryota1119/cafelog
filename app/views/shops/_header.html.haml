@@ -1,0 +1,19 @@
+.header
+  .header
+    .header__upper
+      .header__upper__title
+        = link_to Cafelog 
+      .header__upper__nav
+        .header__upper__nav__left
+          = link_to "カテゴリ"
+        .header__upper__nav__right
+          %ul
+            %li
+              = link_to "ログイン"
+            %li 
+              = link_to "新規登録"
+    .header__search
+      %form.search_container{:action => "#", :method => "get"}
+        %input{:placeholder => "キーワード検索", :size => "25", :type => "text"}
+        %button{:type => "submit"}
+          %i.fas.fa-search

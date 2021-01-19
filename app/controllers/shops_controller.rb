@@ -5,7 +5,6 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
-    @shop.build_address
   end
 
   def create
@@ -20,7 +19,7 @@ class ShopsController < ApplicationController
   private
 
   def shop_params
-    params.require(:shop).permit(:name, addresses_attribute: [])
+    params.require(:shop).permit(:name, )
   end
 
 end
