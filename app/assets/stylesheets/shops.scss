@@ -1,5 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
 .header {
-  height: 100px;
+  height: 150px;
   width: 100%;
-  background-color: aqua;
+  &__upper {
+    height: 90px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    &__title {
+      
+      font-size: 50px;
+      font-weight: bold;
+      a {
+        color: darkgray;
+        text-decoration: none;
+      }
+    }
+    &__nav {
+      width: 100%;
+      padding: 0 20px;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      &__right li{
+        float: left;;
+        margin-left: 20px;
+      }
+    }
+  }
+  &__lower {
+    height: 60px;
+    width: 100%;
+    background-color: bisque;
+    .search-form{
+      position:relative;
+      max-width:300px;	
+      margin-bottom:20px;
+      #sbox{
+        height:50px;
+        padding:0 10px; 
+        position:absolute; 
+        left:0;
+        top:0; 
+        border-radius:25px;
+        outline:0;
+        background:#eee;
+      }
+      #sbtn{
+        height:50px;
+      width:50px;	
+      position:absolute; 
+      left:250px; 
+      top:0;
+      background:#7fbfff;
+      color:#fff;
+      border:none;
+      border-radius:0 25px 25px 0;
+      }
+      #sbtn .fa-search{
+        font-size:20px;	
+        position:absolute;
+        top:30%;
+        left:30%;	
+      }
+      #sbtn:hover{
+        color:#888;
+      }
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  &__img {
+    background-color: brown;
+    height: 560px;
+    width: 100%;
+  }
+  &__feature {
+    height: 500px;
+    width: 100%;
+    background-color: cadetblue;
+  }
+  &__shop-list {
+    height: 1000px;
+    width: 100%;
+    background-color: coral;
+  }
+  .app-banner {
+    height: 400px;
+    width: 100%;
+    background-color: darkgoldenrod;
+  }
+}
+
+.footer {
+  height: 450px;
+  width: 100%;
+  background-color: black
 }
