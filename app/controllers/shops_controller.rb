@@ -5,6 +5,7 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
+    @shop.build_address
   end
 
   def create
@@ -12,8 +13,14 @@ class ShopsController < ApplicationController
     if @shop.save
       redirect_to root_path
     else
-      # render :new
+      render :new
     end
+  end
+
+  private
+
+  def shop_params
+    params.require(:shop).permit(:name, addresses_attribute: [])
   end
 
 end
