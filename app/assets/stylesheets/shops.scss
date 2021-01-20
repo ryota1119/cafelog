@@ -3,7 +3,7 @@
 }
 
 .header {
-  height: 150px;
+  height: 90px;
   width: 100%;
   &__upper {
     height: 90px;
@@ -39,6 +39,7 @@
     }
   }
 }
+
 .search {
   height: 60px;
   width: 100%;
@@ -54,14 +55,14 @@
     width: 90%;
     overflow: hidden;
   }
-  .search_container input[type="text"]{
+  &__container input[type="text"]{
     border: none;
     height: 30px;
   }
-  .search_container input[type="text"]:focus {
+  &__container input[type="text"]:focus {
     outline: 0;
   }
-  .search_container button[type="submit"]{
+  &__container button[type="submit"]{
     cursor: pointer;
     border: none;
     background: #3879D9;

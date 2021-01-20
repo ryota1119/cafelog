@@ -2,6 +2,12 @@
 
 = render 'header'
 
+.search
+  %form.search__container{:action => "#", :method => "get"}
+    %input{:placeholder => "キーワード検索", :size => "25", :type => "text"}
+    %button{:type => "submit"}
+      %i.fas.fa-search
+
 .main
   .main__img
     .main__img__msg

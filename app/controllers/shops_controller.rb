@@ -9,6 +9,7 @@ class ShopsController < ApplicationController
 
   def create
     @shop = Shop.new(shop_params)
+    binding.pry
     if @shop.save
       redirect_to root_path
     else

@@ -16,7 +16,8 @@
       .new-content
         = f.label :prefecture, '都道府県', class: "new-content__title"
         %br/
-        = f.text_field :prefecture, class: "new-content__form"
+        -# = f.text_field :prefecture, class: "new-content__form"
+        = f.select :prefecture, Shop.prefectures.keys, { include_blank: '選択してください'}, { class: "new-content__form"}
       .new-content
         = f.label :city, '市町村', class: "new-content__title"
         %br/
