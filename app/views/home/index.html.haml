@@ -1,2 +1,35 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+- provide(:title, "Top")
+
+= render 'shops/header'
+
+.search
+  %form.search__container{:action => "#", :method => "get"}
+    %input{:placeholder => "キーワード検索", :size => "25", :type => "text"}
+    %button{:type => "submit"}
+      %i.fas.fa-search
+
+.main
+  .main__img
+    .main__img__msg
+      .main__img__msg__ttl
+        あなたのカフェ選びなら
+        %br/
+        Cafelog
+      .main__img__msg__txt
+        休憩・勉強・仕事・女子会
+        %br
+        使い方いろいろ
+  .main__feature
+    用途ジャンルから探す
+    %br/
+    Tagsテーブルからタグ一覧を作成
+  .main__shop-list
+    Shopsテーブルからショップリストを作成
+  .app-banner
+    .app-banner__inner
+      .app-banner__inner__txt
+        今すぐカフェを探す
+      .app-banner__inner__btn
+        = link_to "新規登録", root_path, class: "btn login_btn"
+
+= render 'shops/footer'

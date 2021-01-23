@@ -7,7 +7,10 @@
         = link_to "カテゴリ"
       .header__upper__nav__right
         %ul
-          %li
-            = link_to "ログイン"
-          %li 
-            = link_to "新規登録"
+          - if owner_signed_in?
+            %li オーナー
+            %li= link_to "ログアウト", destroy_owner_session_path, method: :delete
+          - else
+            %li ゲストユーザー
+            %li= link_to "新規登録", new_owner_registration_path
+            %li= link_to "ログイン", new_owner_session_path
