@@ -16,9 +16,10 @@
         %br/
         Cafelog
       .main__img__msg__txt
+        %br/
         休憩・勉強・仕事・女子会
         %br
-        使い方いろいろ
+        最高のひとときを
   .main__feature
     用途ジャンルから探す
     %br/
@@ -33,8 +34,14 @@
   .app-banner
     .app-banner__inner
       .app-banner__inner__txt
-        今すぐカフェを探す
+        - if owner_signed_in?
+          今すぐカフェをオープン
+        - else
+          今すぐカフェを探す
       .app-banner__inner__btn
-        = link_to "新規登録", root_path, class: "btn login_btn"
+        - if owner_signed_in?
+          = link_to "カフェを登録", new_owners_shop_path, class: "btn new-shop_btn"
+        - else
+          = link_to "新規登録", root_path, class: "btn login_btn"
 
 = render 'layouts/footer'

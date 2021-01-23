@@ -130,7 +130,7 @@
       }
       &__btn{
         text-align: center;
-        .login_btn {
+        .btn{
           font-size: 1.6rem;
           font-weight: 700;
           line-height: 1.5;
@@ -155,7 +155,7 @@
           background-color: #FF9900;
           font-weight: bold;
         }
-        .login_btn:hover {
+        .btn:hover {
           background-color: #f56500;
         }
       }
