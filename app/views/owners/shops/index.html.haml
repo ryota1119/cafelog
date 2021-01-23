@@ -1,0 +1,13 @@
+- provide(:title, "ショップ一覧")
+
+= render 'layouts/header'
+
+%h2 ショップ一覧
+- @shops.each do |shop|
+  %p
+    = "id: #{shop.id} name: #{shop.name} prefecture: #{shop.prefecture} "
+    = link_to "Show", owners_shop_path(shop)
+    = link_to "Edit", edit_owners_shop_path(shop)
+
+
+= render 'layouts/footer'

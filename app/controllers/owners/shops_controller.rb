@@ -1,6 +1,9 @@
-class ShopsController < ApplicationController
+class Owners::ShopsController < ApplicationController
+
+  before_action :authenticate_owner!
 
   def index
+    @shops = Shop.all
   end
 
   def new
@@ -8,11 +11,14 @@ class ShopsController < ApplicationController
   end
 
   def create
+    binding.pry
     @shop = Shop.new(shop_params)
     binding.pry
     if @shop.save
+      binding.pry
       redirect_to root_path
     else
+      binding.pry
       render :new
     end
   end

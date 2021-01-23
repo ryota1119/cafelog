@@ -1,7 +1,7 @@
-= render 'header'
+= render 'layouts/header'
 
 .form
-  =form_with(model: @shop, local: true) do |f|
+  =form_with(model: @shop, local: true, url: owners_shops_path(@shop)) do |f|
     .form__container
       .form__container__title
         お店を登録
@@ -37,4 +37,4 @@
       .new-content
         = f.submit "お店を公開する", class: "submit-btn"
 
-= render 'footer'
+= render 'layouts/footer'

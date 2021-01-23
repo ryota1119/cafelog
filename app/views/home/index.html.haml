@@ -1,6 +1,6 @@
 - provide(:title, "Top")
 
-= render 'shops/header'
+= render 'layouts/header'
 
 .search
   %form.search__container{:action => "#", :method => "get"}
@@ -24,7 +24,12 @@
     %br/
     Tagsテーブルからタグ一覧を作成
   .main__shop-list
-    Shopsテーブルからショップリストを作成
+    %h2 ショップ一覧
+    - @shops.each do |shop|
+      %p
+        = "id: #{shop.id} name: #{shop.name} prefecture: #{shop.prefecture} "
+        = link_to "Show", owners_shop_path(shop)
+        = link_to "Edit", edit_owners_shop_path(shop)
   .app-banner
     .app-banner__inner
       .app-banner__inner__txt
@@ -32,4 +37,4 @@
       .app-banner__inner__btn
         = link_to "新規登録", root_path, class: "btn login_btn"
 
-= render 'shops/footer'
+= render 'layouts/footer'
