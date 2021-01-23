@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root "shops#index"
+  get 'home/index'
+  get 'home/show'
+  root "home#index"
   resources :shops
 end
