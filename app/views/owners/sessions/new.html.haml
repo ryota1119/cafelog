@@ -7,11 +7,9 @@
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .new-content
         = f.label :name, 'なまえ', class: "new-content__title"
-        %br/
         = f.text_field :name, autofocus: true, autocomplete: "email", class: "new-content__form"
       .new-content
         = f.label :password, 'パスワード', class: "new-content__title"
-        %br/
         = f.password_field :password, autocomplete: "current-password", class: "new-content__form"
       - if devise_mapping.rememberable?
         .new-content

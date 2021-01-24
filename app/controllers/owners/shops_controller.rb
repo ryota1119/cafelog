@@ -11,14 +11,10 @@ class Owners::ShopsController < ApplicationController
   end
 
   def create
-    binding.pry
     @shop = Shop.new(shop_params)
-    binding.pry
     if @shop.save
-      binding.pry
       redirect_to root_path
     else
-      binding.pry
       render :new
     end
   end

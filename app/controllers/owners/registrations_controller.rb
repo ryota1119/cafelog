@@ -10,10 +10,9 @@ class Owners::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    binding.pry
-    super
-  end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
