@@ -1,10 +1,10 @@
 = render 'layouts/header'
 
 .form
-  =form_with(model: @shop, local: true, url: owners_shops_path(@shop)) do |f|
-    .form__container
-      .form__container__title
-        お店を登録
+  .form__container
+    .form__container__title
+      お店を登録
+    =form_with(model: @shop, local: true, url: owners_shops_path(@shop)) do |f|
       .new-content
         = f.label :name, '店名', class: "new-content__title"
         %br/
