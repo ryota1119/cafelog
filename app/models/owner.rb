@@ -8,5 +8,6 @@ class Owner < ApplicationRecord
 
   validates :name, presence: true
   validates :email, uniqueness:true, length:{ maximum: 255 },
-                    format: { with: VALID_EMAIL_REGEX, message: "が正しい形式ではありません。" }
+										format: { with: VALID_EMAIL_REGEX, message: "が正しい形式ではありません。" }
+	has_many :shops
 end

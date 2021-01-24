@@ -1,9 +1,11 @@
 class Shop < ApplicationRecord
+  belongs_to :owner
   validates :name, presence: true
   validates :postal_code, presence: true, format: {with: /\A\d{7}\z/}
   validates :prefecture, presence: true
   validates :city, presence: true
   validates :phone_number, presence: true, format: {with: /\A\d{10,11}\z/}
+
 
   enum prefecture: {
     北海道:0,青森県:1,岩手県:2,宮城県:3,秋田県:4,山形県:5,福島県:6,
