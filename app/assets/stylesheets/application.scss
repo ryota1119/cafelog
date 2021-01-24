@@ -1,5 +1,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "modules/reset";
+@import "base/reset";
+@import "home";
 @import "shops";
-@import "new";
+@import "modules/header";
+@import "modules/footer";
+@import "modules/form";
