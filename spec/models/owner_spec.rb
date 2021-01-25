@@ -25,18 +25,18 @@ RSpec.describe Owner, type: :model do
       expect(owner.errors[:password]).to include("can't be blank")
     end
 
-    # it "is invalid if there is no password_confirmation even if the password exists." do
-    #   owner = build(:owner, password_confirmation: nil)
-    #   owner.valid?
-    #   expect(owner.errors[:password_confirmation]).to include("")
-    # end
-
     it "is invalid duplicate emails if they exist." do
       owner1 = create(:owner, email: "testman@test.com")
       owner2 = build(:owner, email: "testman@test.com")
       owner2.valid?
       expect(owner2.errors[:email]).to include("has already been taken")
     end
+    
+    # it "is invalid if there is no password_confirmation even if the password exists." do
+    #   owner = build(:owner, password_confirmation: nil)
+    #   owner.valid?
+    #   expect(owner.errors[:password_confirmation]).to include("")
+    # end
 
     it "is valid if the password is at least 6 characters." do
       owner = build(:owner, password: "123456", password_confirmation: "123456")
