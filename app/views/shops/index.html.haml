@@ -33,15 +33,19 @@
         = link_to "Edit", edit_owners_shop_path(shop)
   .app-banner
     .app-banner__inner
-      .app-banner__inner__txt
-        - if owner_signed_in?
-          今すぐカフェをオープン
-        - else
+      - if user_signed_in?
+        .app-banner__inner__txt
           今すぐカフェを探す
-      .app-banner__inner__btn
-        - if owner_signed_in?
+      - elsif owner_signed_in?
+        .app-banner__inner__txt
+          今すぐカフェをオープン
+        .app-banner__inner__btn
           = link_to "カフェを登録", new_owners_shop_path, class: "btn new-shop_btn"
-        - else
-          = link_to "新規登録", root_path, class: "btn login_btn"
+      -else
+        .app-banner__inner__txt
+          カフェオーナー登録してお店をオープン
+        .app-banner__inner__btn
+          = link_to "オーナー新規登録", new_owner_registration_path, class: "btn login_btn"
+          = link_to "オーナーログイン", new_owner_session_path, class: "btn login_btn"
 
 = render 'layouts/footer'

@@ -7,7 +7,13 @@
         = link_to "カテゴリ"
       .header__upper__nav__right
         %ul
-          - if owner_signed_in?
+          - if user_signed_in?
+            %li
+              ユーザー
+              = current_user.nickname
+              さん
+            %li= link_to "ログアウト", destroy_user_session_path, method: :delete
+          - elsif owner_signed_in?
             %li
               オーナー 
               = current_owner.name
@@ -15,5 +21,5 @@
             %li= link_to "ログアウト", destroy_owner_session_path, method: :delete
           - else
             %li ゲストユーザー
-            %li= link_to "新規登録", new_owner_registration_path
-            %li= link_to "ログイン", new_owner_session_path
+            %li= link_to "新規登録", new_user_registration_path
+            %li= link_to "ログイン", new_user_session_path

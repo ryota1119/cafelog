@@ -3,7 +3,7 @@
 .form
   .form__container
     .form__container__title
-      オーナーログイン
+      ユーザーログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .new-content
         = f.label :email, 'メールアドレス', class: "new-content__title"
@@ -17,6 +17,6 @@
           = f.label :remember_me
       .new-content
         = f.submit "Log in", class: "submit-btn"
-    = render "owners/shared/links"
+    = render "users/shared/links"
 
 = render 'layouts/footer'

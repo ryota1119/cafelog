@@ -4,17 +4,14 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
-  namespace :users do
-    resources :shops, only: :show
-  end
   devise_for :owners, controllers: {
     sessions:      'owners/sessions',
     passwords:     'owners/passwords',
     registrations: 'owners/registrations'
   }
-  namespace :owners do
-    resources :shops
-  end
-  get 'home/show'
-  root "home#index"
+  resources :shops, only: [:index, :show] 
+    namespace :owners do
+      resources :shops
+    end
+  root "shops#index"
 end
