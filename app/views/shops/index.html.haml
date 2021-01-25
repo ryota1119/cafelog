@@ -25,12 +25,28 @@
     %br/
     Tagsテーブルからタグ一覧を作成
   .main__shop-list
-    %h2 ショップ一覧
-    - @shops.each do |shop|
-      %p
-        = "id: #{shop.id} name: #{shop.name} prefecture: #{shop.prefecture} "
-        = link_to "Show", owners_shop_path(shop)
-        = link_to "Edit", edit_owners_shop_path(shop)
+    .shop-container
+      .shop-container__title
+        %h2 ショップ一覧
+      %ul.shop-container__lists
+        - @shops.each do |shop|
+          %li.shop-container__lists.shop
+            .shop__image
+              .shop__image__main
+                main image
+              %ul.shop__image__sub
+                %li.shop__image__sub__small
+                  sub image
+                %li.shop__image__sub__small
+                  sub image
+                %li.shop__image__sub__small
+                  sub image
+            .shop__info
+              .shop__info__upper
+                .name
+                  = "店名: #{shop.name}"
+                .address
+                  = "#{shop.prefecture}"
   .app-banner
     .app-banner__inner
       - if user_signed_in?

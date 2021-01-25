@@ -1,11 +1,11 @@
-# Owner.create!(
-#   name: 'testtest',
-#   email: 'test@test.com',
-#   password: 'testtest',
-# )
+Owner.create!(
+  name: 'testowner',
+  email: 'owner@test.com',
+  password: 'testowner',
+)
 
-# User.create!(
-#   nickname: 'testuser',
-#   email: 'user@test.com',
-#   password: 'testuser',
-# )
+User.create!(
+  nickname: 'testuser',
+  email: 'user@test.com',
+  password: 'testuser',
+)

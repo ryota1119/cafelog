@@ -52,7 +52,7 @@
     align-items: center;
     &__msg {
       color: white;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      text-shadow: 0 0 10px rgba(0,0,0,0.4);
       font-family: arial unicode ms;
       &__ttl {
         font-size: 60px;
@@ -63,14 +63,63 @@
     }
   }
   &__feature {
-    height: 500px;
+    height: 300px;
     width: 100%;
     background-color: cadetblue;
   }
   &__shop-list {
     height: 1000px;
     width: 100%;
-    background-color: coral;
+    padding: 10px 0;
+    .shop-container {
+      width: 800px;
+      margin: 0 auto;
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 10px 0;
+      &__title {
+        color: gray;
+        font-family:  arial unicode ms;
+        text-shadow: 0 0 10px rgba(0,0,0,0.4);
+        font-size: 30px;
+        text-align: center;
+      }
+      &__lists {
+        margin-top: 10px;
+        .shop {
+          width: 750px;
+          height: 240px;
+          margin: 0 auto;
+          padding: 10px;
+          border-top: 1px solid lightgray;
+          display: flex;
+          &__image {
+            &__main {
+              height: 160px;
+              width: 160px;
+              border: 1px solid black;
+            }
+            &__sub {
+              height: 50px;
+              width: 160px;
+              display: flex;
+              justify-content: space-between;
+              margin-top: 5px;
+              &__small {
+                display:block;
+                height: 50px;
+                width: 50px;
+                border: 1px solid black;
+              }
+            }
+          }
+          &__info {
+            margin: 0 10px 0 10px;
+
+          }
+        }
+      }
+    }
   }
   .app-banner {
     height: 400px;
@@ -90,13 +139,14 @@
       &__txt {
         color: white;
         font-size: 50px;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-shadow: 0 0 10px rgba(0,0,0,0.4);
       }
       &__btn{
         text-align: center;
         .btn{
           font-size: 1.6rem;
           font-weight: 700;
+          text-shadow: 0 0 10px rgba(0,0,0,0.4);
           line-height: 1.5;
           position: relative;
           display: inline-block;
