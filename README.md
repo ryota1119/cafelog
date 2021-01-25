@@ -53,7 +53,7 @@ Things you may want to cover:
 # DB設計
 ***
 ## ER Diagram
-<img width="1090" alt="Cafelog_ER_Diagram" src="![](https://i.gyazo.com/daeab199a44aee635882807efbb1835c.png)">
+<img width="1294" alt="cafelog-diagram" src="https://user-images.githubusercontent.com/65844442/105655409-57f2c280-5f03-11eb-92b8-bd86ba464857.png">
 
 
 ***
