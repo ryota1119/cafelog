@@ -9,17 +9,15 @@
         %ul
           - if user_signed_in?
             %li
-              ユーザー
-              = current_user.nickname
+              = link_to current_user.name, '#'
               さん
-            %li= link_to "ログアウト", destroy_user_session_path, method: :delete
+            %li= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn btn"
           - elsif owner_signed_in?
             %li
-              オーナー 
-              = current_owner.name
+              = link_to current_owner.name, '#'
               さん
-            %li= link_to "ログアウト", destroy_owner_session_path, method: :delete
+            %li= link_to "ログアウト", destroy_owner_session_path, method: :delete, class: "logout-btn btn"
           - else
             %li ゲストユーザー
-            %li= link_to "新規登録", new_user_registration_path
-            %li= link_to "ログイン", new_user_session_path
+            %li= link_to "新規登録", new_user_registration_path, class: "signup-btn btn"
+            %li= link_to "ログイン", new_user_session_path, class: "login-btn btn"
