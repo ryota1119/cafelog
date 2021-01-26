@@ -74,7 +74,7 @@
     .shop-container {
       width: 800px;
       margin: 0 auto;
-      border: 1px solid black;
+      border: 1px solid lightgray;
       border-radius: 10px;
       padding: 10px 0;
       &__title {
@@ -115,7 +115,42 @@
           }
           &__info {
             margin: 0 10px 0 10px;
-
+            width: 100%;
+            &__ttl {
+              border-bottom: 1px solid lightgray;
+              height: 80px;
+              position: relative;
+              &__inner {
+                position: absolute;
+                top: calc(50%-40px);
+                .name {
+                  font-size: 25px;
+                }
+                .address {
+                  font-size: 15px;
+                }
+              }
+            }
+            &__tags {
+              height: 45px;
+              .tags li {
+                display: inline-block;
+                margin: 10px;
+              }
+            }
+            &__comments {
+              height: 90px;
+              padding: 10px;
+              background-color: #faf8f5;
+              .comment {
+                &__user {
+                  font-size: 15px;
+                }
+                &__text {
+                  font-size: 12px;
+                }
+              }
+            }
           }
         }
       }

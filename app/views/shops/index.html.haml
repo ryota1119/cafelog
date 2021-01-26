@@ -42,16 +42,30 @@
                 %li.shop__image__sub__small
                   sub image
             .shop__info
-              .shop__info__upper
-                .name
-                  = "店名: #{shop.name}"
-                .address
-                  = "#{shop.prefecture}"
+              .shop__info__ttl
+                .shop__info__ttl__inner
+                  .name= link_to(shop.name, '#')
+                  .address= "#{shop.prefecture}#{shop.city}"
+              .shop__info__tags
+                %ul.tags
+                  %li= "#女子会"
+                  %li= "#女子会"
+                  %li= "#女子会"
+              .shop__info__comments
+                %ul.comments
+                  %li.comment
+                    .comment__user
+                      by りょた
+                    .comment__text
+                      美味しい
   .app-banner
     .app-banner__inner
       - if user_signed_in?
         .app-banner__inner__txt
           今すぐカフェを探す
+        .app-banner__inner__btn
+          = link_to "キーワードから検索", "#", class: "btn"
+          = link_to "タグから検索", "#", class: "btn"
       - elsif owner_signed_in?
         .app-banner__inner__txt
           今すぐカフェをオープン
@@ -61,7 +75,7 @@
         .app-banner__inner__txt
           カフェオーナー登録してお店をオープン
         .app-banner__inner__btn
-          = link_to "オーナー新規登録", new_owner_registration_path, class: "btn login_btn"
+          = link_to "オーナー新規登録", new_owner_registration_path, class: "btn sign-in_btn"
           = link_to "オーナーログイン", new_owner_session_path, class: "btn login_btn"
 
 = render 'layouts/footer'
