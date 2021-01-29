@@ -4,7 +4,7 @@
   .form__container
     .form__container__title
       お店情報を編集
-    =form_with(model: @shop, local: true, url: owners_shops_path(@shop)) do |f|
+    =form_with(model: @shop, local: true, url: owners_shop_path(@shop)) do |f|
       = render 'layouts/error_messages', model: f.object
       .new-content
         = f.label :name, '店名', class: "new-content__title"
@@ -28,6 +28,6 @@
         = f.label :phone_number, '電話番号', class: "new-content__title"
         = f.text_field :phone_number, class: "new-content__form"
       .new-content
-        = f.submit "お店を公開する", class: "submit-btn"
+        = f.submit "更新", class: "submit-btn"
 
 = render 'layouts/footer'

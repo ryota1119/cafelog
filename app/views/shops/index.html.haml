@@ -44,7 +44,8 @@
             .shop__info
               .shop__info__ttl
                 .shop__info__ttl__inner
-                  .name= link_to(shop.name, '#')
+                  = link_to shop_path(shop) do
+                    .name= "#{shop.name}"
                   .address= "#{shop.prefecture}#{shop.city}"
               .shop__info__tags
                 %ul.tags

@@ -9,7 +9,7 @@
         %ul
           - if user_signed_in?
             %li
-              = link_to current_user.name, '#'
+              = link_to current_user.nickname, '#'
               さん
             %li= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn btn"
           - elsif owner_signed_in?

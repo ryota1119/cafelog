@@ -25,7 +25,14 @@ class Owners::ShopsController < ApplicationController
   end
 
   def edit
-    
+  end
+
+  def update
+    if @shop.update(shop_params)
+      redirect_to shop_path(@shop)
+    else
+      render edit
+    end
   end
 
   private
