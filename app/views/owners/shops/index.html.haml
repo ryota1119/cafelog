@@ -2,12 +2,39 @@
 
 = render 'layouts/header'
 
-%h2 ショップ一覧
-- @shops.each do |shop|
-  %p
-    = "id: #{shop.id} name: #{shop.name} prefecture: #{shop.prefecture} "
-    = link_to "Show", owners_shop_path(shop)
-    = link_to "Edit", edit_owners_shop_path(shop)
-
+.shop-list
+  .shop-container
+    .shop-container__title
+      %h2 Cafe一覧
+    %ul.shop-container__lists
+      - @shops.each do |shop|
+        %li.shop-container__lists.shop
+          .shop__image
+            .shop__image__main
+              main image
+            %ul.shop__image__sub
+              %li.shop__image__sub__small
+                sub image
+              %li.shop__image__sub__small
+                sub image
+              %li.shop__image__sub__small
+                sub image
+          .shop__info
+            .shop__info__ttl
+              .shop__info__ttl__inner
+                .name= link_to(shop.name, '#')
+                .address= "#{shop.prefecture}#{shop.city}"
+            .shop__info__tags
+              %ul.tags
+                %li= "#女子会"
+                %li= "#女子会"
+                %li= "#女子会"
+            .shop__info__comments
+              %ul.comments
+                %li.comment
+                  .comment__user
+                    by りょた
+                  .comment__text
+                    美味しい
 
 = render 'layouts/footer'

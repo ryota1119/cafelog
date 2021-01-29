@@ -1,6 +1,7 @@
 class Owners::ShopsController < ApplicationController
 
   before_action :authenticate_owner!
+  before_action :set_shop, only: [:show, :edit, :update]
 
   def index
     @shops = Shop.all
@@ -20,10 +21,21 @@ class Owners::ShopsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+    
+  end
+
   private
 
   def shop_params
     params.require(:shop).permit(:name, :postal_code, :prefecture, :city, :house_number, :building_name, :phone_number).merge(owner_id: current_owner.id)
+  end
+
+  def set_shop
+    @shop = Shop.find(params[:id])
   end
 
 end

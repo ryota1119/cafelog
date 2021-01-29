@@ -1,0 +1,34 @@
+- provide(:title, @shop.name)
+
+= render 'layouts/header'
+
+.shop
+  .shop__container
+    .shop__container__main-image
+    .shop__container__contents
+      .shop__container__contents__name
+        = @shop.name
+      .shop__container__contents__info
+        .shop__container__contents__info__address
+          住所：
+          = "#{@shop.prefecture}#{@shop.city}#{@shop.house_number}"
+          %br/
+          = "#{@shop.building_name}"
+        .shop__container__contents__info__phone
+          = "#{@shop.phone_number}"
+      .shop__container__contents__tags
+        = "# 女子会 #バリスタ"
+  .shop__container
+    .shop__container__contents
+      .shop__container__contents__map
+        .shop__container__contents__map__ttl
+          Cafe Map
+        .shop__container__contents__map__field
+      .shop__container__contents__images
+        .shop__container__contents__images__ttl
+          Cafe Photos
+        .shop__container__contents__images__field
+  .shop__container
+    .shop__container__comments
+      .shop__container__comments__ttl
+        Comments
