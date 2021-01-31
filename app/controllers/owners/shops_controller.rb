@@ -14,11 +14,11 @@ class Owners::ShopsController < ApplicationController
 
   def create
     @shop = Shop.new(shop_params)
-    binding.pry
     if @shop.save
-      redirect_to root_path
+      flash[:success] = 'お店の登録しました。'
+      redirect_to shop_path(@shop)
     else
-      render :new
+      render 'owners/shops/new'
     end
   end
 
