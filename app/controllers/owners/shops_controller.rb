@@ -9,6 +9,7 @@ class Owners::ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
+    @shop.images.build
   end
 
   def create
@@ -38,7 +39,7 @@ class Owners::ShopsController < ApplicationController
   private
 
   def shop_params
-    params.require(:shop).permit(:name, :postal_code, :prefecture, :city, :house_number, :building_name, :phone_number).merge(owner_id: current_owner.id)
+    params.require(:shop).permit(:name, :postal_code, :prefecture, :city, :house_number, :building_name, :phone_number, images_attributes: [:url]).merge(owner_id: current_owner.id)
   end
 
   def set_shop
