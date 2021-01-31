@@ -6,6 +6,7 @@
   .shop__container
     .main
       .main__image
+        = image_tag @shop.images[0].url.url, alt: "ショップ画像", height: '250px', width: '250px'
       .main__contents
         .main__contents__name
           - if owner_signed_in? && current_owner.id == @shop.owner_id

@@ -29,7 +29,7 @@
         = f.text_field :phone_number, class: "new-content__form"
       .new-content
         = f.fields_for :images do |i|
-          = i.file_field :image_url
+          = i.file_field :url
 
       .new-content
         = f.submit "お店を公開する", class: "submit-btn"

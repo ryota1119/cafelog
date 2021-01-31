@@ -14,15 +14,17 @@ class Owners::ShopsController < ApplicationController
 
   def create
     @shop = Shop.new(shop_params)
+    binding.pry
     if @shop.save
       flash[:success] = 'お店の登録しました。'
-      redirect_to shop_path(@shop)
+      redirect_to owners_shop_path(@shop)
     else
       render 'owners/shops/new'
     end
   end
 
   def show
+    @image = @shop.images
   end
 
   def edit
@@ -30,7 +32,7 @@ class Owners::ShopsController < ApplicationController
 
   def update
     if @shop.update(shop_params)
-      redirect_to shop_path(@shop)
+      redirect_to owners_shop_path(@shop)
     else
       render edit
     end

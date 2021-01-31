@@ -28,6 +28,10 @@
         = f.label :phone_number, '電話番号', class: "new-content__title"
         = f.text_field :phone_number, class: "new-content__form"
       .new-content
+        = f.fields_for :images do |i|
+          = i.file_field :url
+
+      .new-content
         = f.submit "更新", class: "submit-btn"
 
 = render 'layouts/footer'

@@ -6,6 +6,8 @@
   .shop__container
     .main
       .main__image
+        - @shop.images.each do |image|
+          = image_tag image.url.url
       .main__contents
         .main__contents__name
           = @shop.name

@@ -103,13 +103,14 @@
               height: 50px;
               width: 160px;
               display: flex;
-              justify-content: space-between;
+              justify-content: left;
               margin-top: 5px;
               &__small {
                 display:block;
                 height: 50px;
                 width: 50px;
                 border: 1px solid black;
+                margin-right: 5px;
               }
             }
           }
@@ -231,6 +232,9 @@
     .main {
       display: flex;
       justify-content: space-between;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       &__image {
         height: 250px;
         width: 250px;
