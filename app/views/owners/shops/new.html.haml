@@ -6,32 +6,32 @@
       お店を登録
     =form_with(model: @shop, local: true, url: owners_shops_path(@shop)) do |f|
       = render 'layouts/error_messages', model: f.object
-      .new-content
-        = f.label :name, '店名', class: "new-content__title"
-        = f.text_field :name, class: "new-content__form"
-      .new-content
-        = f.label :postal_code, '郵便番号', class: "new-content__title"
-        = f.text_field :postal_code, class: "new-content__form"
-      .new-content
-        = f.label :prefecture, '都道府県', class: "new-content__title"
-        = f.select :prefecture, Shop.prefectures.keys, { include_blank: "選択してください", selected: 0 }, { class: "new-content__form"}
-      .new-content
-        = f.label :city, '市町村', class: "new-content__title"
-        = f.text_field :city, class: "new-content__form"
-      .new-content
-        = f.label :house_number, '番地', class: "new-content__title"
-        = f.text_field :house_number, class: "new-content__form"
-      .new-content
-        = f.label :building_name, '建物名', class: "new-content__title"
-        = f.text_field :building_name, class: "new-content__form"
-      .new-content
-        = f.label :phone_number, '電話番号', class: "new-content__title"
-        = f.text_field :phone_number, class: "new-content__form"
-      .new-content
+      .input.new-content
+        = f.label :name, '店名', class: "input__title"
+        = f.text_field :name, class: "input__form"
+      .input.new-content
+        = f.label :postal_code, '郵便番号', class: "input__title"
+        = f.text_field :postal_code, class: "input__form"
+      .input.new-content
+        = f.label :prefecture, '都道府県', class: "input__title"
+        = f.select :prefecture, Shop.prefectures.keys, { include_blank: "選択してください", selected: 0 }, { class: "input__form"}
+      .input.new-content
+        = f.label :city, '市町村', class: "input__title"
+        = f.text_field :city, class: "input__form"
+      .input.new-content
+        = f.label :house_number, '番地', class: "input__title"
+        = f.text_field :house_number, class: "input__form"
+      .input.new-content
+        = f.label :building_name, '建物名', class: "input__title"
+        = f.text_field :building_name, class: "input__form"
+      .input.new-content
+        = f.label :phone_number, '電話番号', class: "input__title"
+        = f.text_field :phone_number, class: "input__form"
+      .input.new-content
         = f.fields_for :images do |i|
           = i.file_field :url
 
-      .new-content
-        = f.submit "お店を公開する", class: "submit-btn"
+      .submit.new-content
+        = f.submit "お店を公開する", class: "submit-btn upload-shop"
 
 = render 'layouts/footer'

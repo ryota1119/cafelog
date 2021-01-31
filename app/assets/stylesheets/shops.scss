@@ -1,11 +1,16 @@
 * {
   box-sizing: border-box;
 }
-
+body {
+  background-color: #F2F2F2;
+  height: 100%;
+  width: 100%;
+}
 // searchフォーム
 .search {
   height: 60px;
   width: 100%;
+  background-color: #fff;
   &__container {
     box-sizing: border-box;
     position: relative;
@@ -69,14 +74,17 @@
     background-color: cadetblue;
   }
   &__shop-list {
-    height: 1000px;
+    height: auto;
     width: 100%;
-    padding: 10px 0;
+    padding: 20px 0;
     .shop-container {
       width: 800px;
       margin: 0 auto;
-      border: 1px solid lightgray;
+      background-color: rgba(0,0,0,0.4);
+      border: 0 solid rgba(0,0,0,0.4);
       border-radius: 10px;
+      box-shadow: 0 1px 4px;
+      background: #fff;
       padding: 10px 0;
       &__title {
         color: gray;
@@ -98,7 +106,7 @@
             &__main {
               height: 160px;
               width: 160px;
-              border: 1px solid black;
+              border: 1px solid lightgray;
             }
             &__sub {
               height: 50px;
@@ -110,7 +118,7 @@
                 display:block;
                 height: 50px;
                 width: 50px;
-                border: 1px solid black;
+                border: 1px solid lightgray;
                 margin-right: 5px;
               }
             }
@@ -219,15 +227,15 @@
 
 .shop {
   width: 920px;
-  margin: 0 auto;
+  margin: 20px auto;
   &__container {
     width: 100%;
     height: auto;
     background-color: rgba(0,0,0,0.4);
     border: 0 solid rgba(0,0,0,0.4);
     border-radius: 10px;
-    background: #fff;
     box-shadow: 0 1px 4px;
+    background: #fff;
     margin: 0 0 15px 0;
     padding: 10px;
     .main {
