@@ -35,7 +35,7 @@
               .shop__image__main
                 = image_tag shop.images[0].url.url, alt: "ショップ画像", height: '160px', width: '160px'
               %ul.shop__image__sub
-                - shop.images.each do |image|
+                - shop.images.first(3).each do |image|
                   %li= image_tag image.url.url, alt: '', height: '50px', width: '50px', class: 'shop__image__sub__small'
             .shop__info
               .shop__info__ttl
