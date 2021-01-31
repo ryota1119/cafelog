@@ -1,7 +1,10 @@
 .header
   .header__upper
     .header__upper__title
-      = link_to Cafelog, root_path
+      - if owner_signed_in?
+        = link_to Cafelog, owners_shops_path
+      - else
+        = link_to Cafelog, root_path
     .header__upper__nav
       .header__upper__nav__left
         = link_to "カテゴリ"
