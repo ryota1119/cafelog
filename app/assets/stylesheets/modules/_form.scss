@@ -30,6 +30,79 @@
         padding-left: 1px;
       }
     }
+    .image-upload {
+      height: auto;
+      width: 500px;
+      #image-box-1 {
+        width: 100%;
+        padding-top: 20px;
+        .shop-image {
+          width: 95px;
+          height: 150px;
+          margin-right: 5px;
+          float: left;
+          border: 1px dashed lightgray;
+          background: #f5f5f5;
+          &__operetion {
+            text-align: center;
+            line-height: 50px;
+            &--delete {
+              cursor: pointer;
+              color: #0095ee;
+            }
+          }
+        }
+        #image-box__container {
+          float: left; 
+          .input-area {
+            height: 150px;
+            .upload-label {
+              height: 100%;
+              width: 100%;
+              min-width: 115px;
+              border: 1px dashed lightgray;
+              background: #f5f5f5;
+              display: inline-block;
+              cursor: pointer;
+              text-align: center;
+              line-height: 150px;
+            }
+            
+          }
+        }
+        .shop-num-0{
+          width: 100%;
+        }
+        .shop-num-1{
+          width: 399px;
+        }
+        .shop-num-2{
+          width: 298px;
+        }
+        .shop-num-3{
+          width: 197px;
+        }
+        .shop-num-4{
+          width: 96px;
+        }
+        //下段のfile_field
+        .shop-num-5{
+          width: 100%;
+        }
+        .shop-num-6{
+          width: 400px;
+        }
+        .shop-num-7{
+          width: 300px;
+        }
+        .shop-num-8{
+          width: 200px;
+        }
+        .shop-num-9{
+          width: 100px;
+        }
+      }
+    }
     .submit {
       text-align: center;
       margin: 30px auto;
@@ -51,4 +124,10 @@
       }
     }
   }
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
