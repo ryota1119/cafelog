@@ -1,7 +1,7 @@
 class Shop < ApplicationRecord
   belongs_to :owner
   has_many :images
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images,  allow_destroy: true
   validates :name, presence: true
   validates :postal_code, presence: true, format: {with: /\A\d{7}\z/, message: "6桁の半角英数字を入力してください。"}
   validates :prefecture, presence: true
