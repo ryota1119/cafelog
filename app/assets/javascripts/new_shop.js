@@ -15,7 +15,7 @@ $(function(){
       }
       fileReader.onloadend = function() {
         var src = fileReader.result
-        var html= `<div class='shop-image'>
+        var html= `<div class='shop-image' data-image="${file.name}">
                     <div class=' shop-image__content'>
                       <div class='shop-image__content--icon'>
                         <img src=${src} width="93" height="100" >
