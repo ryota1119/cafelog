@@ -14,7 +14,6 @@ class Owners::ShopsController < ApplicationController
 
   def create
     @shop = Shop.new(shop_params)
-    binding.pry
     if @shop.save
       flash[:success] = 'お店の登録しました。'
       redirect_to owners_shop_path(@shop)
