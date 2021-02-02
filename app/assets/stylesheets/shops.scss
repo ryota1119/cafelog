@@ -47,7 +47,7 @@ body {
 .main {
   width: 100%;
   &__img {
-    background: image-url("/assets/images/2526814093.jpg");
+    background: url("/assets/images/2526814093.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -171,7 +171,7 @@ body {
 .app-banner {
   height: 400px;
   width: 100%;
-  background: image-url("/assets/images/ac96e11703b8fc1bd466f91bb87b3f6ed1524b09.jpg");
+  background: url("/assets/images/ac96e11703b8fc1bd466f91bb87b3f6ed1524b09.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
