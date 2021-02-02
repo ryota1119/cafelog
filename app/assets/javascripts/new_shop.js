@@ -8,7 +8,7 @@ document.addEventListener("turbolinks:load", function () {
         var fileReader = new FileReader();
         dataBox.items.add(file)
         file_field.files = dataBox.files
-
+        console.log(file_field.files);
         var num = $('.shop-image').length + 1 + i
         fileReader.readAsDataURL(file);
         if (num == 10){
