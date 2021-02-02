@@ -40,11 +40,13 @@ gem 'haml-rails'
 
 gem 'font-awesome-sass'
 
+gem "jquery-rails"
+
 gem 'devise'
 
 gem 'carrierwave'
 
-gem "jquery-rails"
+gem 'mini_magick'
 
 gem "aws-sdk-s3", require: false
 
