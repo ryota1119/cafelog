@@ -1,7 +1,7 @@
 $(function(){
   var dataBox = new DataTransfer();
   var file_field = document.querySelector('input[type=file]')
-  $('#img-file').on("change", function(){
+  $('#img-file').on("change", function(e){
     var files = $('input[type="file"]').prop('files')[0];
     $.each(this.files, function(i, file){
       var fileReader = new FileReader();
@@ -11,7 +11,7 @@ $(function(){
       var num = $('.shop-image').length + 1 + i
       fileReader.readAsDataURL(file);
       if (num == 10){
-        $('#image-box__container').css('display', 'none')   
+        $('#image-box__container').css('display', 'none')
       }
       fileReader.onloadend = function() {
         var src = fileReader.result
@@ -29,7 +29,6 @@ $(function(){
       };
       $('#image-box__container').attr('class', `shop-num-${num}`)
     });
-    console.log(dataBox);
   });
 
   $(document).on("click", '.shop-image__operetion--delete', function(){
@@ -38,7 +37,6 @@ $(function(){
     if(file_field.files.length==1){
       $('input[type=file]').val(null)
       dataBox.clearData();
-      console.log(dataBox)
     } else{
       $.each(file_field.files, function(i,input){
         if(input.name==target_name){
