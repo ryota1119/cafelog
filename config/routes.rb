@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/new'
+  get 'comments/edit'
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
