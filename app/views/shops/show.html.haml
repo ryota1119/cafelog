@@ -32,10 +32,10 @@
           Cafe Photos
         .shop__container__contents__images__field
   .shop__container
-    .shop__container__comments
-      .shop__container__comments__ttl
+    .shop__container__comment
+      .shop__container__comment__ttl
         Comments
-      .shop__container__comments__txt-form
+      .shop__container__comment__txt-form
         - if current_user
           = form_with(model: [@shop, @comment], local: true, id: "new_comment") do |form|
             = form.text_area :text, placeholder: "コメントする", rows: "2", class: "textbox"
@@ -43,7 +43,15 @@
         - else
           %strong
             %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-
+      .shop__container__comment__comments
+        %h4 コメント一覧
+        - if @comments
+          - @comments.each do |comment|
+            %p
+              %strong
+                = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                ：
+              = comment.text
 
 = render 'layouts/app-banner'
 
