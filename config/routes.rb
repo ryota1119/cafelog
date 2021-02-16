@@ -11,9 +11,11 @@ Rails.application.routes.draw do
     passwords:     'owners/passwords',
     registrations: 'owners/registrations'
   }
-  resources :shops, only: [:index, :show] 
+  resources :shops, only: [:index, :show] do
+    resources :comments, only: [:create, :edit]
     namespace :owners do
       resources :shops
     end
+  end
   root "shops#index"
 end
