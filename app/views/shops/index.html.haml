@@ -55,10 +55,12 @@
               .shop__info__comments
                 %ul.comments
                   %li.comment
-                    .comment__user
-                      by りょた
-                    .comment__text
-                      美味しい
+                    - shop.comments.last(1).each do |comment|
+                      .comment__user
+                        = comment.user.nickname
+                        の口コミ
+                      .comment__text
+                        = comment.text
 = render 'layouts/app-banner'
 
 = render 'layouts/footer'
