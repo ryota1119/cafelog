@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'comments/new'
-  get 'comments/edit'
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
@@ -11,11 +9,12 @@ Rails.application.routes.draw do
     passwords:     'owners/passwords',
     registrations: 'owners/registrations'
   }
-  resources :shops, only: [:index, :show] do
-    resources :comments, only: [:create, :edit]
+  resources :shops, only: [:index, :show] 
     namespace :owners do
       resources :shops
     end
+  resources :shops do
+    resources :comments, only: :create
   end
   root "shops#index"
 end
