@@ -5,20 +5,18 @@
     .form__container__title
       ユーザーログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .new-content
-        = f.label :email, 'メールアドレス', class: "new-content__title"
-        = f.text_field :email, autofocus: true, autocomplete: "email", class: "new-content__form"
-      .new-content
-        = f.label :password, 'パスワード', class: "new-content__title"
-        = f.password_field :password, autocomplete: "current-password", class: "new-content__form"
+      .input.new-content
+        = f.label :email, 'メールアドレス', class: "input__title"
+        = f.text_field :email, autofocus: true, autocomplete: "email", class: "input__form"
+      .input.new-content
+        = f.label :password, 'パスワード', class: "input__title"
+        = f.password_field :password, autocomplete: "current-password", class: "input__form"
       - if devise_mapping.rememberable?
-        .new-content.check_box
+        .new-content
           = f.check_box :remember_me
           = f.label :remember_me
-      .new-content
+      .new-content.submit
         = f.submit "Log in", class: "submit-btn"
-    = render "users/shared/links"
-
-= render 'layouts/app-banner'
+      = render "users/shared/links"
 
 = render 'layouts/footer'

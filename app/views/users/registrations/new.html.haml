@@ -6,25 +6,23 @@
       新規登録
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render 'layouts/error_messages', model: f.object
-      .new-content
-        = f.label :nickname, 'ニックネーム', class: "new-content__title"
-        = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "new-content__form"
-      .new-content
+      .input.new-content
+        = f.label :nickname, 'ニックネーム', class: "input__title"
+        = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "input__form"
+      .input.new-content
         = f.label :email, 'メールアドレス', class: "new-content__title"
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: "new-content__form"
-      .new-content
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "input__form"
+      .input.new-content
         = f.label :password, 'パスワード', class: "new-content__title"
         - if @minimum_password_length
           %em
             (#{@minimum_password_length}文字以上)
-        = f.password_field :password, autocomplete: "new-password", class: "new-content__form"
-      .new-content
+        = f.password_field :password, autocomplete: "new-password", class: "input__form"
+      .input.new-content
         = f.label :password_confirmation, 'パスワード(確認用)', class: "new-content__title"
-        = f.password_field :password_confirmation, autocomplete: "new-password", class: "new-content__form"
-      .new-content
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: "input__form"
+      .new-content.submit
         = f.submit "登録", class: "submit-btn"
-    = render "users/shared/links"
-    
-= render 'layouts/app-banner'
+      = render "users/shared/links"
 
 = render 'layouts/footer'
