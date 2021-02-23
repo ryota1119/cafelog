@@ -40,7 +40,7 @@
             .shop__info
               .shop__info__ttl
                 .shop__info__ttl__inner
-                  = link_to owners_shop_path(shop) do
+                  = link_to shop_path(shop) do
                     .name= "#{shop.name}"
                   .address= "#{shop.prefecture}#{shop.city}"
               .shop__info__tags
@@ -51,10 +51,12 @@
               .shop__info__comments
                 %ul.comments
                   %li.comment
-                    .comment__user
-                      by りょた
-                    .comment__text
-                      美味しい
+                    - shop.comments.last(1).each do |comment|
+                      .comment__user
+                        = comment.user.nickname
+                        さんの口コミ
+                      .comment__text
+                        = comment.text
 
 = render 'layouts/app-banner'
 

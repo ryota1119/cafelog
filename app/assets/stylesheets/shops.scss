@@ -349,6 +349,9 @@ body {
         &__txt-form {
           width: 80%;
           position: relative;
+          strong {
+            line-height: 50px;
+          }
           .textbox {
             height: 50px;
             width: 100%;

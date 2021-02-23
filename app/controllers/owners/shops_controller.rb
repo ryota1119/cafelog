@@ -4,8 +4,7 @@ class Owners::ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update]
 
   def index
-    # @shops = Shop.where(owner_id: current_owner.id)
-    @shops = Shop.all
+    @shops = Shop.where(owner_id: current_owner.id)
   end
 
   def new

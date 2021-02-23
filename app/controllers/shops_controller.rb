@@ -6,6 +6,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    @image = @shop.images
     @comment = Comment.new
     @comments = @shop.comments.includes(:user).order("created_at DESC").limit(5)
   end
