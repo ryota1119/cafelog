@@ -33,25 +33,26 @@
         .shop__container__contents__images__field
   .shop__container
     .shop__container__comment
-      .shop__container__comment__ttl
-        Comments
-      .shop__container__comment__txt-form
-        - if current_user
-          = form_with(model: [@shop, @comment], local: true, id: "new_comment") do |form|
-            = form.text_area :text, placeholder: "コメントする", rows: "2", class: "textbox"
-            = form.submit "SEND", class: "form__submit"
-        - else
-          %strong
-            %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+      .shop__container__comment__head
+        .shop__container__comment__head__ttl
+          Comments
+        .shop__container__comment__head__txt-form
+          - if current_user
+            = form_with(model: [@shop, @comment], local: true, id: "new_comment") do |form|
+              = form.text_area :text, placeholder: "コメントを追加…", class: "textbox"
+              = form.submit "SEND", class: "form__submit"
+          - else
+            %strong
+              %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
       .shop__container__comment__comments
-        %h4 コメント一覧
-        - if @comments
-          - @comments.each do |comment|
-            %p
-              %strong
-                = link_to comment.user.nickname, "/users/#{comment.user_id}"
-                ：
-              = comment.text
+        .comments-ttl
+          コメント一覧
+        .comments-list
+          - if @comments
+            - @comments.each do |comment|
+              .comment
+                .comment__user= "#{comment.user.nickname}さん"
+                .comment__text= safe_join(comment.text.split("\n"),tag(:br))
 
 = render 'layouts/app-banner'
 

@@ -6,6 +6,7 @@ body {
   height: 100%;
   width: 100%;
 }
+
 // searchフォーム
 .search {
   height: 60px;
@@ -333,12 +334,60 @@ body {
     }
     &__comment {
       height: auto;
+      width: 100%;
       padding: 10px;
-      &__ttl {
-        font-family: arial unicode ms;
-        font-size: 30px;
-        font-weight: bold;
-        color: rgba(12, 18, 28, 0.6);
+      &__head {
+        display: flex;
+        height: 50px;
+        &__ttl {
+          width: 20%;
+          font-family: arial unicode ms;
+          font-size: 30px;
+          font-weight: bold;
+          color: rgba(12, 18, 28, 0.6);
+        }
+        &__txt-form {
+          width: 80%;
+          position: relative;
+          .textbox {
+            height: 50px;
+            width: 100%;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            resize: none;
+          }
+          .form__submit{
+            position: absolute;
+            right: 10px;
+            top: 13px;
+            border: none;
+            background-color: #fff;
+            text-decoration: none;
+            color: rgba(12, 18, 28, 0.6);
+            cursor: pointer;
+          }
+        }
+      }
+      &__comments {
+        width: 80%;
+        height: auto;
+        margin: 20px auto 0 auto;
+        .comments-ttl {
+          font-family: arial unicode ms;
+          font-size: 20px;
+          font-weight: bold;
+          color: rgba(12, 18, 28, 0.6);
+          text-align: center;
+        }
+        .comments-list {
+          .comment {
+            margin: 10px 0;
+            display: flex;
+            &__user {
+              margin-right: 10px;
+            }
+          }
+        }
       }
     }
   }
