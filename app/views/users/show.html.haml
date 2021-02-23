@@ -28,7 +28,7 @@
             店名
           .favolite-delete-btn
             削除
-    .user__edit-btn
-      = link_to('編集', "#")
+    .user__edit
+      = link_to('編集', edit_user_registration_path(current_user), class: "user__edit__btn")
 
 = render 'layouts/footer'
