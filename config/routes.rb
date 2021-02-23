@@ -10,11 +10,12 @@ Rails.application.routes.draw do
     registrations: 'owners/registrations'
   }
   resources :shops, only: [:index, :show] 
-    namespace :owners do
-      resources :shops
-    end
+  namespace :owners do
+    resources :shops
+  end
   resources :shops do
     resources :comments, only: :create
   end
+  resources :users, only: [:show]
   root "shops#index"
 end

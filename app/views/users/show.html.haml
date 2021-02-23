@@ -1,0 +1,34 @@
+- provide(:title, "#{@user.nickname}")
+
+= render 'layouts/header'
+
+.user-section
+  .user-section__title
+    マイページ
+  .user
+    .uses__icon
+    .user__nickname
+      ="#{@user.nickname}"
+    .user__favolites
+      .user__favolites__ttl
+        お気に入りのお店一覧
+      %ul.user__favolites__lists
+        %li.user__favolites__lists__list
+          .shop-name
+            店名
+          .favolite-delete-btn
+            削除
+        %li.user__favolites__lists__list
+          .shop-name
+            店名
+          .favolite-delete-btn
+            削除
+        %li.user__favolites__lists__list
+          .shop-name
+            店名
+          .favolite-delete-btn
+            削除
+    .user__edit-btn
+      = link_to('編集', "#")
+
+= render 'layouts/footer'
