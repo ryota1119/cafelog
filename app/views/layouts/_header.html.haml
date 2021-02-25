@@ -17,7 +17,7 @@
             %li= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn btn"
           - elsif owner_signed_in?
             %li
-              = link_to current_owner.name, '#'
+              = link_to current_owner.name, owner_path(current_owner)
               さん
             %li= link_to "ログアウト", destroy_owner_session_path, method: :delete, class: "logout-btn btn"
           - else

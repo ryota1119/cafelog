@@ -1,3 +1,67 @@
-// Place all the styles related to the Owners controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.owner-section {
+  width: 800px;
+  margin: 50px auto;
+  &__title {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgba(12, 18, 28, 0.6);
+    text-align: center;
+  }
+  .owner {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    &__nickname {
+      font-weight: bold;
+      color: rgba(12, 18, 28, 0.6);
+      font-size: 30px;
+      margin: 50px;
+    }
+    &__shops {
+      font-size: 20px;
+      width: 80%;
+      margin: 0 auto;
+      &__ttl {
+        height: 40px;
+        line-height: 40px;
+        background-color: lightgray;
+        font-weight: bold;
+        color: rgba(12, 18, 28, 0.6);
+      }
+      &__lists {
+        &__list {
+          padding: 10px 30px;
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid lightgray;
+          .shop-name {
+            a {
+              color: black;
+            }
+          }
+          .shop-edit-btn {
+            a {
+              text-decoration: none;
+              color: rgba(12, 18, 28, 0.6);
+            }
+          }
+        }
+      }
+    }
+    &__edit {
+      font-weight: bold;
+      margin: 70px auto;
+      font-size: 20px;
+      &__btn {
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      a {
+      color: rgba(12, 18, 28, 0.6);
+      text-decoration: none;
+      }
+    }
+  }
+}

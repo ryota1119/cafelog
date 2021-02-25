@@ -1,2 +1,25 @@
-%h1 Owners#show
-%p Find me in app/views/owners/show.html.haml
+- provide(:title, "#{@owner.name}")
+
+= render 'layouts/header'
+
+.owner-section
+  .owner-section__title
+    オーナーページ
+  .owner
+    .uses__icon
+    .owner__nickname
+      ="#{@owner.name}"
+    .owner__shops
+      .owner__shops__ttl
+        管理ショップ一覧
+      %ul.owner__shops__lists
+        - @shops.each do |shop|
+          %li.owner__shops__lists__list
+            .shop-name
+              = link_to(shop.name, owners_shop_path)
+            .shop-edit-btn
+              = link_to('お店情報を編集', edit_owners_shop_path)
+    .owner__edit
+      = link_to('プロフィール編集', edit_owner_registration_path(current_owner), class: "owner__edit__btn")
+
+= render 'layouts/footer'
