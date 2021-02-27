@@ -1,7 +1,7 @@
 class ShopsController < ApplicationController
 
   def index
-    @shops = Shop.includes(:owner).includes(:comments).includes(:images).order("created_at DESC").limit(5)
+    @shops = Shop.includes(:owner).includes(:comments).includes(:images ).order("created_at DESC").limit(5)
   end
 
   def show
