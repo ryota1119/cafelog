@@ -27,6 +27,10 @@
       .input
         = f.label :phone_number, '電話番号', class: "input__title"
         = f.text_field :phone_number, class: "input__form"
+      .input
+        = f.label :tag_list, 'タグ', class: "input__title"
+        = f.text_field :tag_list, value: @shop.tag_list.join(','), class: "input__form"
+
       .image-upload
         .input-title
           ショップ画像

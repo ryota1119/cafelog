@@ -21,9 +21,11 @@
         %br
         最高のひとときを
   .main__feature
-    用途ジャンルから探す
-    %br/
-    Tagsテーブルからタグ一覧を作成
+    - if @tags.present?
+      - @tags.each do |tag|  # コントローラーで、登録数の順で20個取得(＠tags)
+        = link_to "#{tag.name}(#{tag.taggings_count})", tags_path(tag.name)
+    - else
+      %p 登録されているタグはありません
   .main__shop-list
     .shop-container
       .shop-container__title

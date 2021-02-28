@@ -7,9 +7,8 @@ class Shop < ApplicationRecord
   validates :postal_code, presence: true, format: {with: /\A\d{7}\z/, message: "6桁の半角英数字を入力してください。"}
   validates :prefecture, presence: true
   validates :city, presence: true
-  validates :phone_number, presence: true, format: {with: /\A\d{10,11}\z/, message: "10桁または11桁の半角英数字を入力してください。"}
-
-
+  validates :phone_number, presence: true, format: {with: /\A\d{10,11}\z/, message: "10桁または11桁の半角英数字を入力してください。"} 
+  
   enum prefecture: {
     北海道:0,青森県:1,岩手県:2,宮城県:3,秋田県:4,山形県:5,福島県:6,
     茨城県:7,栃木県:8,群馬県:9,埼玉県:10,千葉県:11,東京都:12,神奈川県:13,
@@ -21,4 +20,6 @@ class Shop < ApplicationRecord
     福岡県:39,佐賀県:40,長崎県:41,熊本県:42,大分県:43,宮崎県:44,鹿児島県:45,
     沖縄県:46
   }
+  
+  acts_as_taggable_on :tags
 end
