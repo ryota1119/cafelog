@@ -2,49 +2,52 @@
 
 = render 'layouts/header'
 
-.shop
-  .shop__container
-    .main
-      .main__image
+.shop-info
+  .shop-info__container
+    .shop-info__container__main
+      .shop-info__container__main__image
         = image_tag @shop.images[0].url.url, alt: "ショップ画像", height: '250px', width: '250px'
-      .main__contents
-        .main__contents__name
+      .shop-info__container__main__contents
+        .shop-info__container__main__contents__name
           - if owner_signed_in? && current_owner.id == @shop.owner_id
             = @shop.name
-            = link_to "編集", edit_owners_shop_path(@shop), class: "main__contents__name__edit-btn"
+            = link_to "編集", edit_owners_shop_path(@shop), class: "shop-edit-btn"
           - else
             = @shop.name
-        .main__contents__info
-          .main__contents__info__address
+        .shop-info__container__main__contents__info
+          .shop-info__container__main__contents__info__address
             = "#{@shop.city}#{@shop.house_number} #{@shop.building_name}"
-          .main__contents__info__phone
+          .shop-info__container__main__contents__info__phone
             = "#{@shop.phone_number}"
-        .main__contents__tags
-          = "# 女子会 #バリスタ"
-  .shop__container
-    .shop__container__contents
-      .shop__container__contents__map
-        .shop__container__contents__map__ttl
+        .shop-info__container__main__contents__tags
+          - @shop.tags.each do |tag|
+            = "##{tag.name}"
+
+  .shop-info__container
+    .shop-info__container__contents
+      .shop-info__container__contents__map
+        .shop-info__container__contents__map__ttl
           Cafe Map
-        .shop__container__contents__map__field
-      .shop__container__contents__images
-        .shop__container__contents__images__ttl
+        .shop-info__container__contents__map__field
+      .shop-info__container__contents__images
+        .shop-info__container__contents__images__ttl
           Cafe Photos
-        .shop__container__contents__images__field
-  .shop__container
-    .shop__container__comment
-      .shop__container__comment__head
-        .shop__container__comment__head__ttl
+        .shop-info__container__contents__images__field
+
+  .shop-info__container
+    .shop-info__container__comment-content
+      .shop-info__container__comment-content__head
+        .shop-info__container__comment-content__head__ttl
           Comments
-        .shop__container__comment__head__txt-form
+        .shop-info__container__comment-content__head__txt-form
           - if current_user
             = form_with(model: [@shop, @comment], local: true, id: "new_comment") do |form|
-              = form.text_area :text, placeholder: "コメントを追加…", class: "textbox"
+              = form.text_area :text, placeholder: "コメントする", rows: "2", class: "textbox"
               = form.submit "SEND", class: "form__submit"
           - else
             %strong
               %p ※※※ コメントの投稿には一般ユーザーとして新規登録/ログインが必要です ※※※
-      .shop__container__comment__comments
+      .shop-info__container__comment-content__comments
         .comments-ttl
           コメント一覧
         .comments-list
