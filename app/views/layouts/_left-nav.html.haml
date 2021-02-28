@@ -1,0 +1,10 @@
+.main__contents__left-nav
+  .tag-search
+    .tag-search__title
+      タグから検索
+    .tag-search__tags
+      - if @tags.present?
+        - @tags.each do |tag|
+          .tag-search__tags__tag= link_to "・##{tag.name}(#{tag.taggings_count})", shops_path(tag: tag.name)
+      - else
+        %p 登録されているタグはありません

@@ -1,0 +1,31 @@
+.main__contents__shop-list
+  .shop-container
+    .shop-container__title
+      %h2 Cafe一覧
+    %ul.shop-container__lists
+      - @shops.each do |shop|
+        %li.shop-container__lists.shop
+          .shop__image
+            .shop__image__main
+              = image_tag shop.images[0].url.url, alt: "ショップ画像", height: '160px', width: '160px'
+            %ul.shop__image__sub
+              - shop.images.first(3).each do |image|
+                %li= image_tag image.url.url, alt: '', height: '50px', width: '50px', class: 'shop__image__sub__small'
+          .shop__info
+            .shop__info__ttl
+              .shop__info__ttl__inner
+                = link_to shop_path(shop) do
+                  .name= "#{shop.name}"
+                .address= "#{shop.prefecture}#{shop.city}"
+            .shop__info__tags
+              - shop.tags.each do |tag|
+                .tag= "##{tag.name}"
+            .shop__info__comments
+              %ul.comments
+                %li.comment
+                  - shop.comments.last(1).each do |comment|
+                    .comment__user
+                      = comment.user.nickname
+                      さんの口コミ
+                    .comment__text
+                      = comment.text

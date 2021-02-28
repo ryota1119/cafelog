@@ -5,7 +5,10 @@ class Owners::ShopsController < ApplicationController
 
   def index
     @shops = Shop.where(owner_id: current_owner.id)
-    @tags = Shop.tag_counts_on(:tags).most_used(20) 
+    @tags = Shop.tag_counts_on(:tags).order('count DESC')     # 全タグ(Postモデルからtagsカラムを降順で取得)
+      if @tag = params[:tag]   # タグ検索用
+        @shop = Post.tagged_with(params[:tag])   # タグに紐付く投稿
+      end
   end
 
   def new
