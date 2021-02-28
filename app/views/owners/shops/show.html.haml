@@ -22,6 +22,7 @@
         .shop-info__container__main__contents__tags
           - @shop.tags.each do |tag|
             = "##{tag.name}"
+
   .shop-info__container
     .shop-info__container__contents
       .shop-info__container__contents__map
@@ -32,19 +33,21 @@
         .shop-info__container__contents__images__ttl
           Cafe Photos
         .shop-info__container__contents__images__field
+
   .shop-info__container
-    .shop-info__container__comments
-      .shop-info__container__comments__ttl
-        Comments
-      .shop-info__container__comments__txt-form
-        - if current_user
-          = form_with(model: [@shop, @comment], local: true, id: "new_comment") do |form|
-            = form.text_area :text, placeholder: "コメントする", rows: "2", class: "textbox"
-            = form.submit "SEND", class: "form__submit"
-        - else
-          %strong
-            %p ※※※ コメントの投稿には一般ユーザーとして新規登録/ログインが必要です ※※※
-      .shop-info__container__comment__comments
+    .shop-info__container__comment-content
+      .shop-info__container__comment-content__head
+        .shop-info__container__comment-content__head__ttl
+          Comments
+        .shop-info__container__comment-content__head__txt-form
+          - if current_user
+            = form_with(model: [@shop, @comment], local: true, id: "new_comment") do |form|
+              = form.text_area :text, placeholder: "コメントする", rows: "2", class: "textbox"
+              = form.submit "SEND", class: "form__submit"
+          - else
+            %strong
+              %p ※※※ コメントの投稿には一般ユーザーとして新規登録/ログインが必要です ※※※
+      .shop-info__container__comment-content__comments
         .comments-ttl
           コメント一覧
         .comments-list
