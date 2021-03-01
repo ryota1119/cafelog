@@ -29,7 +29,7 @@
         = f.text_field :phone_number, class: "input__form"
       .input
         = f.label :tag_list, 'タグ', class: "input__title"
-        = f.text_field :tag_list, value: @shop.tag_list.join(','), class: "input__form"
+        = f.text_field :tag_list, value: @shop.tag_list.join(','), class: "input__form tag_form"
 
       .image-upload
         .input-title
