@@ -2,6 +2,10 @@ class ShopsController < ApplicationController
 
   def index
     @shops = Shop.includes(:owner).includes(:comments).includes(:images ).order("created_at DESC").limit(5)
+    @tags = Shop.tag_counts_on(:tags).order('count DESC')
+    if params[:tag]
+      @shops = Shop.tagged_with("#{params[:tag]}")
+    end
   end
 
   def show

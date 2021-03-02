@@ -1,8 +1,6 @@
 ul.tagit {
     padding: 1px 5px;
     overflow: auto;
-    /* margin-left: inherit; 
-    margin-right: inherit; */
     width: 300px;
     border-radius: 5px;
     border: 1px solid #ccc;
